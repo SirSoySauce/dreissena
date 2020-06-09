@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8"/>
+    <meta name="robots" content="noindex">
+    <title>Gallery - M152</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial;
+        }
+
+        /* The grid: Four equal columns that floats next to each other */
+        .column {
+            float: left;
+            width: 25%;
+            padding: 10px;
+        }
+
+        /* Style the images inside the grid */
+        .column img {
+            opacity: 0.8;
+            cursor: pointer;
+        }
+
+        .column img:hover {
+            opacity: 1;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* The expanding image container */
+        .container {
+            position: relative;
+            display: none;
+        }
+
+        /* Expanding image text */
+        #imgtext {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            color: white;
+            font-size: 20px;
+        }
+
+        /* Closable button inside the expanded image */
+        .closebtn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            color: white;
+            font-size: 35px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div style="text-align:center">
+    <h2>Gallerie:</h2>
+    <p>Klicken Sie auf die Bilder, um sie in voller Grösse zu betrachten:</p>
+</div>
+
+<!-- The four columns -->
+<div class="row">
+    <div class="column">
+        <img src="gallery/thumbnail/img_1.jpg" alt="Desinfektion" style="width:100%" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+        <img src="gallery/thumbnail/img_2.jpg" alt="Farbiges Gesicht" style="width:100%" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+        <img src="gallery/thumbnail/img_3.jpg" alt="Mann" style="width:100%" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+        <img src="gallery/thumbnail/img_4.jpg" alt="Statue" style="width:100%" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+        <img src="gallery/thumbnail/img_5.jpg" alt="Kinder" style="width:100%" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+        <img src="gallery/thumbnail/img_6.jpg" alt="Büro" style="width:100%" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+        <img src="gallery/thumbnail/img_7.jpg" alt="Hände" style="width:100%" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+        <img src="gallery/thumbnail/img_8.jpg" alt="Kochen" style="width:100%" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+        <img src="gallery/thumbnail/img_9.jpg" alt="Zufall" style="width:100%" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+        <img src="gallery/thumbnail/img_10.jpg" alt="Platine" style="width:100%" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+        <img src="gallery/thumbnail/img_11.jpg" alt="Erdmännchen" style="width:100%" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+        <img src="gallery/thumbnail/img_12.jpg" alt="Fuchs" style="width:100%" onclick="myFunction(this);">
+    </div>
+</div>
+
+<div class="container">
+    <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+    <img id="expandedImg" style="width:100%">
+    <div id="imgtext"></div>
+</div>
+
+<script>
+    function myFunction(imgs) {
+        var expandImg = document.getElementById("expandedImg");
+        var imgText = document.getElementById("imgtext");
+        expandImg.src = imgs.src.replace("thumbnail", "img");
+        imgText.innerHTML = imgs.alt;
+        expandImg.parentElement.style.display = "block";
+    }
+</script>
+
+</body>
+</html>
