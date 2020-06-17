@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8"/>
     <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="libraries/lightgallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="style/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <title>Gallery - M152</title>
@@ -28,65 +29,26 @@
     </div>
 
     <!-- The four columns -->
-    <div class="row">
-        <div class="column">
-            <img src="gallery/thumbnail/img_1.jpg" alt="Desinfektion" style="width:100%" onclick="myFunction(this);">
-        </div>
-        <div class="column">
-            <img src="gallery/thumbnail/img_2.jpg" alt="Farbiges Gesicht" style="width:100%"
-                 onclick="myFunction(this);">
-        </div>
-        <div class="column">
-            <img src="gallery/thumbnail/img_3.jpg" alt="Mann" style="width:100%" onclick="myFunction(this);">
-        </div>
-        <div class="column">
-            <img src="gallery/thumbnail/img_4.jpg" alt="Statue" style="width:100%" onclick="myFunction(this);">
-        </div>
-        <div class="column">
-            <img src="gallery/thumbnail/img_5.jpg" alt="Kinder" style="width:100%" onclick="myFunction(this);">
-        </div>
-        <div class="column">
-            <img src="gallery/thumbnail/img_6.jpg" alt="Büro" style="width:100%" onclick="myFunction(this);">
-        </div>
-        <div class="column">
-            <img src="gallery/thumbnail/img_7.jpg" alt="Hände" style="width:100%" onclick="myFunction(this);">
-        </div>
-        <div class="column">
-            <img src="gallery/thumbnail/img_8.jpg" alt="Kochen" style="width:100%" onclick="myFunction(this);">
-        </div>
-        <div class="column">
-            <img src="gallery/thumbnail/img_9.jpg" alt="Zufall" style="width:100%" onclick="myFunction(this);">
-        </div>
-        <div class="column">
-            <img src="gallery/thumbnail/img_10.jpg" alt="Platine" style="width:100%" onclick="myFunction(this);">
-        </div>
-        <div class="column">
-            <img src="gallery/thumbnail/img_11.jpg" alt="Erdmännchen" style="width:100%" onclick="myFunction(this);">
-        </div>
-        <div class="column">
-            <img src="gallery/thumbnail/img_12.jpg" alt="Fuchs" style="width:100%" onclick="myFunction(this);">
-        </div>
+    <div class="row" id="lightgallery">
+        <img src="gallery/thumbnail/img_1.jpg" data-src="gallery/img/img_1.jpg" alt="Desinfektion">
+        <img src="gallery/thumbnail/img_2.jpg" data-src="gallery/img/img_2.jpg" alt="Farbiges Gesicht">
+        <img src="gallery/thumbnail/img_3.jpg" data-src="gallery/img/img_3.jpg" alt="Mann">
+        <img src="gallery/thumbnail/img_4.jpg" data-src="gallery/img/img_4.jpg" alt="Statue">
+        <img src="gallery/thumbnail/img_5.jpg" data-src="gallery/img/img_5.jpg" alt="Kinder">
+        <img src="gallery/thumbnail/img_6.jpg" data-src="gallery/img/img_6.jpg" alt="Büro">
+        <img src="gallery/thumbnail/img_7.jpg" data-src="gallery/img/img_7.jpg" alt="Hände">
+        <img src="gallery/thumbnail/img_8.jpg" data-src="gallery/img/img_8.jpg" alt="Kochen">
+        <img src="gallery/thumbnail/img_9.jpg" data-src="gallery/img/img_9.jpg" alt="Zufall">
+        <img src="gallery/thumbnail/img_10.jpg" data-src="gallery/img/img_10.jpg" alt="Platine">
+        <img src="gallery/thumbnail/img_11.jpg" data-src="gallery/img/img_11.jpg" alt="Erdmännchen">
+        <img src="gallery/thumbnail/img_12.jpg" data-src="gallery/img/img_12.jpg" alt="Fuchs">
     </div>
-
-    <div class="container">
-        <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-        <img id="expandedImg" style="width:100%">
-        <div id="imgtext"></div>
-    </div>
-
-    <script>
-        function myFunction(imgs) {
-            var expandImg = document.getElementById("expandedImg");
-            var imgText = document.getElementById("imgtext");
-            expandImg.src = imgs.src.replace("thumbnail", "img");
-            imgText.innerHTML = imgs.alt;
-            expandImg.parentElement.style.display = "block";
-        }
-    </script>
 </section>
 
 <footer>
     @Ivo Cavelti - M152
 </footer>
+<script src="libraries/lightgallery/js/lightgallery.min.js"></script>
+<script src="js/scripts.js"></script>
 </body>
 </html>
