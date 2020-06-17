@@ -32,7 +32,7 @@ header {
 
 header h3 {
     font-weight: 700;
-    padding-left: 16px;
+    padding: 1em;
     margin-bottom: 0;
 }
 
@@ -130,4 +130,17 @@ footer {
     color: white;
     font-size: 35px;
     cursor: pointer;
+}
+
+#lightgallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#lightgallery img {
+    display: block;
+    padding: 1em 1em;
+    height: 270px;
+    width: 480px;
 }
