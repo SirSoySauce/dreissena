@@ -13,11 +13,11 @@ html, body {
 body {
     background-color: #FDFFF7;
     color: #50514F;
-    font-family: 'Montserrat', sans-serif;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
 }
 
 section {
@@ -44,17 +44,28 @@ header .navigation-bar {
     align-items: center;
 }
 
+section .diashow-gif {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+}
+
+section .carousel-container {
+    width: 80%;
+    margin: 64px auto;
+}
+
 header .navigation-bar a {
     text-decoration: none;
     height: min-content;
     line-height: 32px;
     color: #50514F;
     padding: 8px 12px;
-    margin: 8px 16px;
+    margin: 16px 16px;
     background-color: #FFED65;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h2, h3, h4, h5, h6 {
     font-size: initial;
     line-height: initial;
 }
@@ -71,7 +82,6 @@ h4, h5, h6 {
 
 p {
     display: inline-block;
-    font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     margin-bottom: 16px;
 }
