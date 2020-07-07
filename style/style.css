@@ -158,3 +158,16 @@ footer {
     height: 270px;
     width: 480px;
 }
+
+.multimedia-content {
+    width: 30%;
+    margin-bottom: 16px;
+}
+
+@media screen and (max-width: 900px) {
+    .multimedia-content {
+        display: block;
+        width: 80%;
+        margin: 16px auto;
+    }
+}
