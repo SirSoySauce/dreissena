@@ -160,13 +160,70 @@ footer {
     width: 480px;
 }
 
+.animation {
+    width: 30%;
+    display: block;
+}
+
 .multimedia-content {
     width: 30%;
     margin-bottom: 16px;
 }
 
+.transformation-animation {
+    width: 150px;
+    height: 80px;
+    display: inline-block;
+    background-color: red;
+}
+
+.transformation-animation:hover  {
+    transform: rotate(90deg);
+}
+
+.translate-animation {
+    width: 150px;
+    height: 80px;
+    display: inline-block;
+    background-color: red;
+}
+
+.translate-animation:hover  {
+    transform: translate(50px);
+}
+
+.transition-animation {
+    width: 150px;
+    height: 80px;
+    display: inline-block;
+    background-color: red;
+    transition: all 1s ease-out;
+}
+
+.transition-animation:hover  {
+    background-color: yellow;
+    height: 40px;
+    transform: rotate(90deg);
+    transition: all 1s ease-out;
+}
+
+.scrolling-activated-content {
+    transition: all .2s ease-in-out;
+    transform: translate3d(0px, 30px, 0);
+    opacity: 0;
+}
+
+.scrolling-activated-content.active {
+    transform: translate3d(0px, 0, 0);
+    opacity: 1;
+}
+
+.spacer {
+    height: 50vh;
+}
+
 @media screen and (max-width: 900px) {
-    .multimedia-content {
+    .multimedia-content, .animation {
         display: block;
         width: 80%;
         margin: 16px auto;

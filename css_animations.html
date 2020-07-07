@@ -18,18 +18,119 @@
         <a href="gallery.html">Gallery</a>
         <a href="styleguide.html">Styleguide</a>
         <a href="gif.html">Gif</a>
-        <a href="css_animations.html">CSS-Animationen</a>
+        <a href="css_animations.html">Animationen</a>
         <a href="imprint.html">Impressum</a>
         <a href="multimedia.html">Multimedia</a></div>
 </header>
 <section>
-    <h1>CSS Animations</h1>
+    <h1>Animations</h1>
+    <h2 class="scrolling-activated-content">SVG</h2>
+    <svg viewbox="0 0 400 260" class="animation scrolling-activated-content">
+        <path d="M50,50 c0,0 0,0 100,0 0,0 0,0 0,100 0,0 0,0 -100,0 0,0 0,0 0,-100z;">
+            <animate attributeName="d" values="M50,50 c0,0 0,0 100,0 0,0 0,0 0,100 0,0 0,0 -100,0 0,0 0,0 0,-100z;
+				M50,50 c0,0 0,0 100,0 0,0 0,0 0,100 0,0 0,0 -100,0 0,0 0,0 0,-100z;
+				M50,50 c46,-46 92,-9 100,0 0,0 46.5,46 0,100 0,0 -45,49 -100,0 0,0 -46,-46 0,-100z;
+				M50,50 c46,-46 92,-9 100,0 0,0 46.5,46 0,100 0,0 -45,49 -100,0 0,0 -46,-46 0,-100z;
+				M50,50 c0,0 0,0 50,0 0,0 0,0 50,0 0,0 0,0 -50,120 0,0 0,0 -50,-120z;
+				M50,50 c0,0 0,0 50,0 0,0 0,0 50,0 0,0 0,0 -50,120 0,0 0,0 -50,-120z;
+				M50,50 c46,-46 92,-9 100,0 0,0 46.5,46 0,100 0,0 -45,49 -100,0 0,0 -46,-46 0,-100z;
+				M50,50 c46,-46 92,-9 100,0 0,0 46.5,46 0,100 0,0 -45,49 -100,0 0,0 -46,-46 0,-100z;
+				M50,50 c0,0 0,0 100,0 0,0 0,0 0,100 0,0 0,0 -100,0 0,0 0,0 0,-100z;" dur="5s"
+                     repeatCount="indefinite"/>
+        </path>
+    </svg>
 
+    <p class="scrolling-activated-content">Dieses Beispiel wurde kopiert von <a
+            href="https://wiki.selfhtml.org/wiki/SVG/Tutorials/Shape-Morphing">SelfHTML</a>. Dort werden
+        SVG-Animationskonzepte gut und einfach erklärt. </p>
+
+    <h2 class="scrolling-activated-content">CSS</h2>
+    <h3 class="scrolling-activated-content">Transformation</h3>
+
+    <div class="transformation-animation scrolling-activated-content"></div>
+
+    <h3 class="scrolling-activated-content">Translation</h3>
+
+    <div class="translate-animation scrolling-activated-content"></div>
+
+    <h3 class="scrolling-activated-content">Transition</h3>
+
+    <div class="transition-animation scrolling-activated-content"></div>
+
+    <h2 class="scrolling-activated-content">HTML5-Canvas</h2>
+
+    <canvas id="circle-canvas" class="animation scrolling-activated-content">
+        Your browser does not support the HTML canvas tag.</canvas>
+
+    <script>
+        var c = document.getElementById("circle-canvas");
+        var ctx = c.getContext("2d");
+        ctx.beginPath();
+        ctx.arc(95,50,40,0,2*Math.PI);
+        ctx.stroke();
+    </script>
+
+    <p class="scrolling-activated-content">Dieses simple HTML5-Canvas wurde kopiert von <a href="https://www.w3schools.com/html/html5_canvas.asp">W3Schools</a>. Auf W3Schools wird die Funktionsweise von HTML5-Canvas anhand von Beispielen erklärt.</p>
+
+    <h2 class="scrolling-activated-content">Scrolling Activated Content</h2>
+
+    <p class="scrolling-activated-content">Der Scrolling Activated Content wurde nach einem Tutorial von <a href="https://www.kirupa.com/animations/creating_scroll_activated_animations.htm">Kirupa</a> umgesetzt.</p>
 
 </section>
 
 <footer>
     @Ivo Cavelti - M152
 </footer>
+
+<script>
+    var isScrolling = false;
+
+    window.addEventListener("scroll", throttleScroll, false);
+
+    function throttleScroll(e) {
+        if (isScrolling == false) {
+            window.requestAnimationFrame(function() {
+                scrolling(e);
+                isScrolling = false;
+            });
+        }
+        isScrolling = true;
+    }
+
+    document.addEventListener("DOMContentLoaded", scrolling, false);
+
+    var listItems = document.querySelectorAll(".scrolling-activated-content");
+
+    function scrolling(e) {
+        for (var i = 0; i < listItems.length; i++) {
+            var listItem = listItems[i];
+
+            if (isPartiallyVisible(listItem)) {
+                listItem.classList.add("active");
+            } else {
+                listItem.classList.remove("active");
+            }
+        }
+    }
+
+    function isPartiallyVisible(el) {
+        var elementBoundary = el.getBoundingClientRect();
+
+        var top = elementBoundary.top;
+        var bottom = elementBoundary.bottom;
+        var height = elementBoundary.height;
+
+        return ((top + height >= 0) && (height + window.innerHeight >= bottom));
+    }
+
+    function isFullyVisible(el) {
+        var elementBoundary = el.getBoundingClientRect();
+
+        var top = elementBoundary.top;
+        var bottom = elementBoundary.bottom;
+
+        return ((top >= 0) && (bottom <= window.innerHeight));
+    }
+</script>
 </body>
 </html>
